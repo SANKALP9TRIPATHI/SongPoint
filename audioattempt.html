@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SongPoint</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.freepik.com/free-vector/glowing-musical-pentagram-background-with-sound-notes_1017-31220.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: rgba(63, 0, 113, 0.9);
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        header img {
+            width: 80px;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin: 0;
+            margin-left: 10px;
+        }
+
+        header h1 span.song {
+            color: #9b4d96;
+        }
+
+        header h1 span.point {
+            color: #ffffff;
+        }
+
+        header .search-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            width: 900px;
+        }
+
+        header input[type="text"] {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            background-color: #2d003e;
+            color: white;
+            text-align: center;
+        }
+
+        header .profile-icon {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        header .profile-icon img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        nav {
+            background-color: rgba(45, 0, 62, 0.9);
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #9b4d96;
+        }
+
+        .main-section {
+            text-align: center;
+            padding: 20px 0;
+            background-color: transparent;
+            color: white;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-section h2 {
+            font-size: 32px;
+            margin: 10px 0;
+            color: #9b4d96;
+        }
+
+        .main-section p {
+            font-size: 18px;
+            color: #ccc;
+            margin: 10px 0;
+        }
+
+        .most-played-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .song-card {
+            background-color: rgba(45, 0, 62, 0.9);
+            width: 200px;
+            margin: 10px;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .song-card:hover {
+            transform: scale(1.05);
+        }
+
+        .song-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .song-card h3 {
+            font-size: 18px;
+            color: #9b4d96;
+            margin: 5px 0;
+        }
+
+        .song-card p {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+
+        .play-btn {
+            background: none;
+            border: none;
+            color: #9b4d96;
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.2s, color 0.3s;
+            display: inline-block;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+            color: #7a367a;
+        }
+
+        .play-btn:active {
+            transform: scale(1.05);
+        }
+
+        .audio-controls {
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+
+        .prev-btn, .next-btn {
+            background: none;
+            border: none;
+            color: #9b4d96;
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.2s, color 0.3s;
+            display: inline-block;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .prev-btn:hover, .next-btn:hover {
+            color: #7a367a;
+            transform: scale(1.1);
+        }
+
+        .prev-btn:active, .next-btn:active {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #3f0071;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #9b4d96;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="C:\Users\Home\Pictures\Screenshots\Screenshot 2024-12-06 132749.png" alt="Logo">
+            <h1><span class="song">Song</span><span class="point">Point</span></h1>
+        </div>
+        
+        <div class="search-container">
+            <input type="text" placeholder="Search...">
+        </div>
+
+        <div class="profile-icon">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4mYGiDHOtUVcSxuzNfeds4xWXNOpQ-lIMPA&s" alt="Profile" width="40" height="40">
+        </div>
+    </header>
+
+    <nav>
+        <a href="audioattempt.html">Home</a>
+        <a href="browse.html">Browse</a>
+        <a href="library.html">Library</a>
+        <a href="playlist.html">Playlists</a>
+        <a href="signup.html">Create Account</a>
+    </nav>
+
+    <section class="main-section">
+        <h2>Welcome to SongPoint</h2>
+        <p>Your ultimate music streaming destination. Discover, listen, and enjoy your favorite tunes!</p>
+    </section>
+
+    <section class="most-played-section">
+        <div class="song-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQspHBnJWt2IwMvvTnbK8GCA8VrmCTPous4Pg&s" alt="Song 1">
+            <h3>On and On</h3>
+            <p>NCS</p>
+            <audio id="audio1" src="C:\Users\Home\Downloads\ocean-breeze-beat-by-jtwayne-213318.mp3"></audio>
+            <div class="audio-controls">
+                <button class="prev-btn" onclick="previousSong(1)">&#9194;</button>
+                <button class="play-btn" onclick="togglePlayPause(1)">►</button>
+                <button class="next-btn" onclick="nextSong(1)">&#9193;</button>
+            </div>
+        </div>
+        <div class="song-card">
+            <img src="https://i.scdn.co/image/ab67616d00001e029b2594916f95025cba1303ab" alt="Song 2">
+            <h3>Invincible</h3>
+            <p>NCS</p>
+            <audio id="audio2" src="C:\Users\Home\Downloads\music-for-running-and-sports-268616.mp3"></audio>
+            <div class="audio-controls">
+                <button class="prev-btn" onclick="previousSong(2)">&#9194;</button>
+                <button class="play-btn" onclick="togglePlayPause(2)">►</button>
+                <button class="next-btn" onclick="nextSong(2)">&#9193;</button>
+            </div>
+        </div>
+        <div class="song-card">
+            <img src="https://i.scdn.co/image/ab67616d0000b2734b8b52a487c842534619501a" alt="Song 3">
+            <h3>Thick Of It</h3>
+            <p>KSI</p>
+            <audio id="audio3" src="C:\Users\Home\Downloads\sample-type-rap-beat-lucky-night-193659.mp3"></audio>
+            <div class="audio-controls">
+                <button class="prev-btn" onclick="previousSong(3)">&#9194;</button>
+                <button class="play-btn" onclick="togglePlayPause(3)">►</button>
+                <button class="next-btn" onclick="nextSong(3)">&#9193;</button>
+            </div>
+        </div>
+        <div class="song-card">
+            <img src="https://c.saavncdn.com/160/Yalgaar-Hindi-2020-20200606192120-500x500.jpg" alt="Song 4">
+            <h3>Yalgaar</h3>
+            <p>CarryMinati</p>
+            <audio id="audio4" src="C:\Users\Home\Downloads\optigan-bossa-nova-sample-221080.mp3"></audio>
+            <div class="audio-controls">
+                <button class="prev-btn" onclick="previousSong(4)">&#9194;</button>
+                <button class="play-btn" onclick="togglePlayPause(4)">►</button>
+                <button class="next-btn" onclick="nextSong(4)">&#9193;</button>
+            </div>
+        </div>
+        <div class="song-card">
+            <img src="https://i.discogs.com/IaddiDIwdo1rv6YTgj2SJezWYyldsIQGXgB2yIn6cec/rs:fit/g:sm/q:90/h:595/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExMTg4/NDUwLTE1NjcyODkw/OTEtMjY5NC5qcGVn.jpeg" alt="Song 5">
+            <h3>Thunder</h3>
+            <p>Imagine Dragons</p>
+            <audio id="audio5" src="C:\Users\Home\Downloads\optigan-bossa-nova-sample-221080.mp3"></audio>
+            <div class="audio-controls">
+                <button class="prev-btn" onclick="previousSong(5)">&#9194;</button>
+                <button class="play-btn" onclick="togglePlayPause(5)">►</button>
+                <button class="next-btn" onclick="nextSong(5)">&#9193;</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 SongPoint | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+    <script>
+        let isPlaying = [false, false, false, false, false];
+        let currentSongIndex = [0, 0, 0, 0, 0]; 
+        const songs = ['C:\Users\Home\Downloads\ocean-breeze-beat-by-jtwayne-213318.mp3', 'C:\Users\Home\Downloads\music-for-running-and-sports-268616.mp3', 'C:\Users\Home\Downloads\sample-type-rap-beat-lucky-night-193659.mp3', 'C:\Users\Home\Downloads\optigan-bossa-nova-sample-221080.mp3', 'C:\Users\Home\Downloads\optigan-bossa-nova-sample-221080.mp3'];
+        
+        function togglePlayPause(songId) {
+            const audio = document.getElementById("audio" + songId);
+            const playPauseButton = document.querySelectorAll(".song-card")[songId - 1].querySelector('.play-btn');
+            if (isPlaying[songId - 1]) {
+                audio.pause();
+                playPauseButton.textContent = "►";
+            } else {
+                audio.play();
+                playPauseButton.textContent = "❚❚";
+            }
+            isPlaying[songId - 1] = !isPlaying[songId - 1];
+        }
+
+        function previousSong(songId) {
+            const audio = document.getElementById("audio" + songId);
+            let previousIndex = currentSongIndex[songId - 1] - 1;
+            if (previousIndex < 0) previousIndex = songs.length - 1;
+            audio.src = songs[previousIndex];
+            audio.play();
+            currentSongIndex[songId - 1] = previousIndex;
+        }
+
+        function nextSong(songId) {
+            const audio = document.getElementById("audio" + songId);
+            let nextIndex = (currentSongIndex[songId - 1] + 1) % songs.length;
+            audio.src = songs[nextIndex];
+            audio.play();
+            currentSongIndex[songId - 1] = nextIndex;
+        }
+    </script>
+</body>
+</html>

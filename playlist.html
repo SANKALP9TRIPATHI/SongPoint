@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlists - SongPoint</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1d1d1d;
+            color: white;
+            background-image: url('https://img.freepik.com/free-vector/glowing-musical-pentagram-background-with-sound-notes_1017-31220.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        header {
+            background-color: rgba(63, 0, 113, 0.9);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        header img {
+            width: 80px;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin: 0;
+            margin-left: 10px;
+        }
+
+        header h1 span.song {
+            color: #9b4d96;
+        }
+
+        header h1 span.point {
+            color: #ffffff;
+        }
+
+        header .search-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        header input[type="text"] {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            background-color: #2d003e;
+            color: white;
+        }
+
+        header .profile-icon {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        header .profile-icon img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        nav {
+            background-color: #2d003e;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #9b4d96;
+        }
+
+        .playlist-section {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .playlist-section h2 {
+            font-size: 32px;
+            margin: 0;
+            color: #9b4d96;
+        }
+
+        .playlist-section p {
+            font-size: 18px;
+            color: #ccc;
+        }
+
+        .song-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            margin-top: 40px;
+        }
+
+        .song-card {
+            background-color: #2d003e;
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .song-card:hover {
+            transform: scale(1.05);
+        }
+
+        .song-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .song-card h3 {
+            font-size: 18px;
+            color: #9b4d96;
+            margin: 10px 0;
+        }
+
+        .song-card p {
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .audio-controls {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .audio-controls button {
+            background-color: transparent;
+            border: none;
+            color: #9b4d96;
+            font-size: 24px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        .audio-controls button:hover {
+            color: white;
+        }
+
+        footer {
+            background-color: rgba(63, 0, 113, 0.9);
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #9b4d96;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="C:\Users\Home\Pictures\Screenshots\Screenshot 2024-12-06 132749.png" alt="Logo">
+            <h1><span class="song">Song</span><span class="point">Point</span></h1>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Search...">
+        </div>
+        <div class="profile-icon">
+            <img src="https://th.bing.com/th/id/OIP.LfUcKCHKBamgN20k7KQWeAHaHT?rs=1&pid=ImgDetMain" alt="Profile">
+        </div>
+    </header>
+
+    <nav>
+        <a href="C:\Users\Home\Downloads\Documents\FINAL SONGPOINT 1T103 PROJECT\audioattempt.html">Home</a>
+        <a href="C:\Users\Home\Downloads\Documents\FINAL SONGPOINT 1T103 PROJECT\browse.html">Browse</a>
+        <a href="C:\Users\Home\Downloads\Documents\FINAL SONGPOINT 1T103 PROJECT\library.html">Library</a>
+        <a href="#">Playlists</a>
+        <a href="C:\Users\Home\Downloads\Documents\FINAL SONGPOINT 1T103 PROJECT\signup.html">Account</a>
+    </nav>
+
+    <section class="playlist-section">
+        <h2>Your Playlist</h2>
+        <p>Explore your favorite songs below. Enjoy your personal collection!</p>
+
+        <div class="song-list">
+            
+            <div class="song-card" id="song-1">
+                <img src="https://i.ytimg.com/vi/m1a_GqJf02M/maxresdefault.jpg" alt="Song 1">
+                <h3>God's Plan</h3>
+                <p>Drake</p>
+                <audio id="audio-1">
+                    <source src="C:\Users\Home\Downloads\vlog-music-beat-trailer-showreel-promo-background-intro-theme-274290.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="audio-controls">
+                    <button class="previous" onclick="previousSong(1)">
+                        <i class="fas fa-backward"></i>
+                    </button>
+                    <button class="play-pause" onclick="togglePlayPause(1)">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="next" onclick="nextSong(1)">
+                        <i class="fas fa-forward"></i>
+                    </button>
+                </div>
+            </div>
+
+            
+            <div class="song-card" id="song-2">
+                <img src="https://i1.sndcdn.com/artworks-578yfsXElyd2baLo-gye7zA-t500x500.jpg" alt="Song 2">
+                <h3>Humble</h3>
+                <p>Kendrick Lamar</p>
+                <audio id="audio-2">
+                    <source src="C:\Users\Home\Downloads\lost-in-dreams-abstract-chill-downtempo-cinematic-future-beats-270241.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="audio-controls">
+                    <button class="previous" onclick="previousSong(2)">
+                        <i class="fas fa-backward"></i>
+                    </button>
+                    <button class="play-pause" onclick="togglePlayPause(2)">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="next" onclick="nextSong(2)">
+                        <i class="fas fa-forward"></i>
+                    </button>
+                </div>
+            </div>
+
+            
+            <div class="song-card" id="song-3">
+                <img src="https://upload.wikimedia.org/wikipedia/en/7/73/Venom_%28Eminem_song%29_single_cover.jpg" alt="Song 3">
+                <h3>Venom</h3>
+                <p>Eminem</p>
+                <audio id="audio-3">
+                    <source src="C:\Users\Home\Downloads\stylish-deep-electronic-262632.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="audio-controls">
+                    <button class="previous" onclick="previousSong(3)">
+                        <i class="fas fa-backward"></i>
+                    </button>
+                    <button class="play-pause" onclick="togglePlayPause(3)">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="next" onclick="nextSong(3)">
+                        <i class="fas fa-forward"></i>
+                    </button>
+                </div>
+            </div>
+
+            
+            <div class="song-card" id="song-4">
+                <img src="https://i.scdn.co/image/ab67616d00001e02600adbc750285ea1a8da249f" alt="Song 4">
+                <h3>The Box</h3>
+                <p>Roddy Ricch</p>
+                <audio id="audio-4">
+                    <source src="C:\Users\Home\Downloads\showreel-music-promo-advertising-opener-vlog-background-intro-theme-261601.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="audio-controls">
+                    <button class="previous" onclick="previousSong(4)">
+                        <i class="fas fa-backward"></i>
+                    </button>
+                    <button class="play-pause" onclick="togglePlayPause(4)">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="next" onclick="nextSong(4)">
+                        <i class="fas fa-forward"></i>
+                    </button>
+                </div>
+            </div>
+
+            
+            <div class="song-card" id="song-5">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLM7-dvU6xCRRlpVjtunpha4iaDV_7shBBtw&s" alt="Song 5">
+                <h3>This is America</h3>
+                <p>Childish Gambino</p>
+                <audio id="audio-5">
+                    <source src="C:\Users\Home\Downloads\tell-me-the-truth-260010.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="audio-controls">
+                    <button class="previous" onclick="previousSong(5)">
+                        <i class="fas fa-backward"></i>
+                    </button>
+                    <button class="play-pause" onclick="togglePlayPause(5)">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="next" onclick="nextSong(5)">
+                        <i class="fas fa-forward"></i>
+                    </button>
+                </div>
+            </div>
+
+            
+            <div class="song-card" id="song-6">
+                <img src="https://upload.wikimedia.org/wikipedia/en/5/55/Michael_Jackson_-_Thriller.png" alt="Song 6">
+                <h3>Thriller</h3>
+                <p>Michael Jackson</p>
+                <audio id="audio-6">
+                    <source src="C:\Users\Home\Downloads\soulsweeper-252499.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="audio-controls">
+                    <button class="previous" onclick="previousSong(6)">
+                        <i class="fas fa-backward"></i>
+                    </button>
+                    <button class="play-pause" onclick="togglePlayPause(6)">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="next" onclick="nextSong(6)">
+                        <i class="fas fa-forward"></i>
+                    </button>
+                </div>
+            </div>
+
+            
+            <div class="song-card" id="song-7">
+                <img src="https://upload.wikimedia.org/wikipedia/en/3/36/Bee_Gees_Stayin_Alive.jpg" alt="Song 7">
+                <h3>Stayin' Alive</h3>
+                <p>Bee Gees</p>
+                <audio id="audio-7">
+                    <source src="C:\Users\Home\Downloads\spinning-head-271171.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="audio-controls">
+                    <button class="previous" onclick="previousSong(7)">
+                        <i class="fas fa-backward"></i>
+                    </button>
+                    <button class="play-pause" onclick="togglePlayPause(7)">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="next" onclick="nextSong(7)">
+                        <i class="fas fa-forward"></i>
+                    </button>
+                </div>
+            </div>
+
+            
+            <div class="song-card" id="song-8">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/Elton_John_StillStanding.jpg/220px-Elton_John_StillStanding.jpg" alt="Song 8">
+                <h3>I'm Still Standing</h3>
+                <p>Elton John</p>
+                <audio id="audio-8">
+                    <source src="C:\Users\Home\Downloads\groovy-ambient-funk-201745.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="audio-controls">
+                    <button class="previous" onclick="previousSong(8)">
+                        <i class="fas fa-backward"></i>
+                    </button>
+                    <button class="play-pause" onclick="togglePlayPause(8)">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="next" onclick="nextSong(8)">
+                        <i class="fas fa-forward"></i>
+                    </button>
+                </div>
+            </div>
+
+            
+            <div class="song-card" id="song-9">
+                <img src="https://lh3.googleusercontent.com/XdxfwnrUdLwwqgjToUqy3WUShP9ZFfQ0-q0LrtGJ2tmdXpgkCUg9bwOI7OQJHVoBdSIn2PLo1tGhicD0EA=w544-h544-l90-rj" alt="Song 9">
+                <h3>Bohemian Rhapsody</h3>
+                <p>Queen</p>
+                <audio id="audio-9">
+                    <source src="C:\Users\Home\Downloads\movement-200697.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="audio-controls">
+                    <button class="previous" onclick="previousSong(9)">
+                        <i class="fas fa-backward"></i>
+                    </button>
+                    <button class="play-pause" onclick="togglePlayPause(9)">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="next" onclick="nextSong(9)">
+                        <i class="fas fa-forward"></i>
+                    </button>
+                </div>
+            </div>
+
+            
+            <div class="song-card" id="song-10">
+                <img src="https://upload.wikimedia.org/wikipedia/en/3/35/Akon-Lonely.jpg" alt="Song 10">
+                <h3>Lonely</h3>
+                <p>Akon</p>
+                <audio id="audio-10">
+                    <source src="C:\Users\Home\Downloads\ethereal-vistas-191254.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="audio-controls">
+                    <button class="previous" onclick="previousSong(10)">
+                        <i class="fas fa-backward"></i>
+                    </button>
+                    <button class="play-pause" onclick="togglePlayPause(10)">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="next" onclick="nextSong(10)">
+                        <i class="fas fa-forward"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 SongPoint | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+    <script>
+    
+        function togglePlayPause(songNumber) {
+            const audio = document.getElementById(`audio-${songNumber}`);
+            const playPauseButton = document.querySelector(`#song-${songNumber} .play-pause i`);
+            if (audio.paused) {
+                audio.play();
+                playPauseButton.classList.remove('fa-play');
+                playPauseButton.classList.add('fa-pause');
+            } else {
+                audio.pause();
+                playPauseButton.classList.remove('fa-pause');
+                playPauseButton.classList.add('fa-play');
+            }
+        }
+        
+        function nextSong(songNumber) {
+            const currentSong = document.getElementById(`song-${songNumber}`);
+            const nextSong = currentSong.nextElementSibling;
+            if (nextSong) {
+                const nextAudio = nextSong.querySelector('audio');
+                nextAudio.play();
+                togglePlayPause(nextSong.id.split('-')[1]);
+            }
+        }
+
+        
+        function previousSong(songNumber) {
+            const currentSong = document.getElementById(`song-${songNumber}`);
+            const previousSong = currentSong.previousElementSibling;
+            if (previousSong) {
+                const previousAudio = previousSong.querySelector('audio');
+                previousAudio.play();
+                togglePlayPause(previousSong.id.split('-')[1]);
+            }
+        }
+    </script>
+
+</body>
+</html>

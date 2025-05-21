@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse - SongPoint</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1d1d1d;
+            color: white;
+            background-image: url('https://img.freepik.com/free-vector/glowing-musical-pentagram-background-with-sound-notes_1017-31220.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        header {
+            background-color: rgba(63, 0, 113, 0.9);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        header img {
+            width: 80px;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin: 0;
+            margin-left: 10px;
+        }
+
+        header h1 span.song {
+            color: #9b4d96;
+        }
+
+        header h1 span.point {
+            color: #ffffff;
+        }
+
+        header .search-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        header input[type="text"] {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            background-color: #2d003e;
+            color: white;
+        }
+
+        header .profile-icon {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        header .profile-icon img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        nav {
+            background-color: #2d003e;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #9b4d96;
+        }
+
+        .browse-section {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .browse-section h2 {
+            font-size: 32px;
+            margin: 0;
+            color: #9b4d96;
+        }
+
+        .browse-category {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .category-card {
+            background-color: #2d003e;
+            width: 250px;
+            margin: 15px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: scale(1.05);
+        }
+        .category-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .category-card h3 {
+            font-size: 20px;
+            color: #9b4d96;
+            margin: 10px 0;
+        }
+
+        .category-card p {
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        footer {
+            background-color: rgba(63, 0, 113, 0.9);
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #9b4d96;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="C:\Users\Home\Pictures\Screenshots\Screenshot 2024-12-06 132749.png" alt="Logo">
+            <h1><span class="song">Song</span><span class="point">Point</span></h1>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Search...">
+        </div>
+        <div class="profile-icon">
+            <img src="https://th.bing.com/th/id/OIP.LfUcKCHKBamgN20k7KQWeAHaHT?rs=1&pid=ImgDetMain" alt="Profile">
+        </div>
+    </header>
+
+    <nav>
+        <a href="C:\Users\Home\Downloads\Documents\FINAL SONGPOINT 1T103 PROJECT\audioattempt.html">Home</a>
+        <a href="#">Browse</a>
+        <a href="C:\Users\Home\Downloads\Documents\FINAL SONGPOINT 1T103 PROJECT\library.html">Library</a>
+        <a href="C:\Users\Home\Downloads\Documents\FINAL SONGPOINT 1T103 PROJECT\playlist.html">Playlists</a>
+        <a href="C:\Users\Home\Downloads\Documents\FINAL SONGPOINT 1T103 PROJECT\signup.html">Account</a>
+    </nav>
+
+    <section class="browse-section">
+        <h2>Browse Music</h2>
+        <p>Explore different genres, artists, and albums.</p>
+        <div class="browse-category">
+            <div class="category-card">
+                <a href="https://open.spotify.com/playlist/3ZgmfR6lsnCwdffZUan8EA">
+                <img src="https://musiknerd.org/wp-content/uploads/2024/10/pop-musik-1024x1024.jpg" alt="Pop Genre">
+                </a>
+                <h3>Pop</h3>
+                <p>Discover the latest hits from popular artists.</p>
+            </div>
+            <div class="category-card">
+                <a href="https://open.spotify.com/playlist/37i9dQZF1DWXRqgorJj26U">
+                <img src="https://musiknerd.org/wp-content/uploads/2024/09/rockmusik-1024x1024.jpg" alt="Rock Genre">
+            </a>
+                <h3>Rock</h3>
+                <p>Explore the best of classic and modern rock.</p>
+            </div>
+            
+            <div class="category-card">
+                <a href="https://open.spotify.com/playlist/06KmJWiQhL0XiV6QQAHsmw">
+                <img src="https://i1.sndcdn.com/artworks-NUSMKDxLMaBM4TPA-IzQL6A-t500x500.jpg" alt="Hip-Hop Genre">
+                </a>
+                <h3>Hip-Hop</h3>
+                <p>The hottest hip-hop and rap tracks right now.</p>
+            </div>
+            <div class="category-card">
+                <a href="https://open.spotify.com/playlist/1nd5HJX8Ma3zFB131acHGl">
+                <img src="https://images.squarespace-cdn.com/content/v1/593070a42994cad2710a6439/1509287224715-YBSUUZYYEMKRDJAYHYXJ/jazz.png" alt="Jazz Genre">
+            </a>
+                <h3>Jazz</h3>
+                <p>Relax and enjoy timeless jazz standards.</p>
+            </div>
+            <div class="category-card">
+                <a href="https://open.spotify.com/playlist/5QJ7ytA5oLJYnq9ihf907q">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2T0uVyrJJFwlM-qYffFd2N4ObgWsH3n1dLQ&s" alt="Classical Genre">
+            </a>
+                <h3>Classical</h3>
+                <p>Experience the beauty of classical compositions.</p>
+            </div>
+        </div>
+
+        
+        
+    </section>
+
+    <footer>
+        <p>&copy; 2024 SongPoint | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+</body>
+</html>

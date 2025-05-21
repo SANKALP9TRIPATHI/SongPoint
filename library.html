@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library - SongPoint</title>
+    <style>
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1d1d1d;
+            color: white;
+        }
+
+       
+        header {
+            background-color: #3f0071; 
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        
+        header img {
+            width: 60px; 
+            height: 60px;
+            margin-right: 15px; 
+            border-radius: 27px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        header h1 span.song {
+            color: #9b4d96; 
+        }
+
+        header h1 span.point {
+            color: #ffffff; 
+        }
+
+        
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #2d003e;
+            padding: 5px 15px;
+            border-radius: 5px;
+            width:3000px; 
+         max-width:900px ;
+            margin-right: 100px;
+        }
+
+        .search-bar input[type="text"] {
+            background: transparent;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            font-size: 16px;
+            border-radius: ;
+            width: 100%;
+            text-align: center; 
+        }
+
+        .search-bar input[type="text"]:focus {
+            outline: none;
+        }
+
+        
+        .profile-icon {
+            background-color: #3f0071;
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: wheat;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        
+        nav {
+            background-color: #2d003e;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #9b4d96; 
+        }
+
+        
+        .library-section {
+            text-align: center;
+            padding: 50px;
+            background-image: url('https://img.freepik.com/free-vector/glowing-musical-pentagram-background-with-sound-notes_1017-31220.jpg');
+            background-size: cover; 
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .library-section h2 {
+            font-size: 32px;
+            margin: 0;
+            color: #9b4d96;
+        }
+
+        .library-section p {
+            font-size: 18px;
+            color: #ccc;
+        }
+
+        
+        .library-category {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .category-card {
+            background-color: #2d003e;
+            width: 250px;
+            margin: 15px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: scale(1.05);
+        }
+
+        .category-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .category-card h3 {
+            font-size: 20px;
+            color: #9b4d96;
+            margin: 10px 0;
+        }
+
+        .category-card p {
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        
+        footer {
+            background-color: #3f0071;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #9b4d96;
+            text-decoration: none;
+        }
+
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .search-bar {
+                width: 80%;
+                margin: 15px 0;
+            }
+
+            .profile-icon {
+                margin-left: 0;
+            }
+
+            .library-category {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .category-card {
+                width: 80%;
+                margin: 10px 0;
+            }
+
+            nav a {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+   
+    <header>
+       
+        <div style="display: flex; align-items: center;">
+            <img src="C:\Users\Home\Pictures\Screenshots\Screenshot 2024-12-06 132749.png" alt="Logo">
+            <h1><span class="song">Song</span><span class="point">Point</span></h1>
+        </div>
+        
+        
+        <div style="display: flex; align-items: center;">
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+
+            
+            <div class="profile-icon">
+                <img src="https://th.bing.com/th/id/OIP.LfUcKCHKBamgN20k7KQWeAHaHT?rs=1&pid=ImgDetMain" > 
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <a href="C:\Users\Home\Downloads\Documents\FINAL SONGPOINT 1T103 PROJECT\audioattempt.html">Home</a>
+        <a href="C:\Users\Home\Downloads\Documents\FINAL SONGPOINT 1T103 PROJECT\browse.html">Browse</a>
+        <a href="#">Library</a>
+        <a href="C:\Users\Home\Downloads\Documents\FINAL SONGPOINT 1T103 PROJECT\playlist.html">Playlists</a>
+        <a href="C:\Users\Home\Downloads\Documents\FINAL SONGPOINT 1T103 PROJECT\signup.html">Account</a>
+    </nav>
+
+    
+    <section class="library-section">
+        <h2>Your Music Library</h2>
+        <p>Browse your saved songs, albums, and playlists below.</p>
+
+        
+        <div class="library-category">
+            <div class="category-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_gASr459o1M1NXGqBuR7OYPOaRk_o8hpABg&s" alt="Favorite Songs">
+                <h3>Favorite Songs</h3>
+                <p>Your most played and loved songs.</p>
+            </div>
+            <div class="category-card">
+                <a href="C:\Users\Home\Downloads\Documents\FINAL SONGPOINT 1T103 PROJECT\playlist.html">
+                <img src="https://i0.wp.com/playlistideas.com/wp-content/uploads/2020/07/playlistideas-logo.png?fit=500%2C500&ssl=1" alt="Playlists">
+                </a>
+                <h3>Playlists</h3>
+                <p>Your custom and curated playlists.</p>
+            </div>
+            <div class="category-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcPpc5rRTDRbE99EMfp2TUHaC_3LQ1cR5SAA&s" alt="Albums">
+                <h3>Albums</h3>
+                <p>All your favorite albums in one place.</p>
+            </div>
+           
+        </div>
+    </section>
+
+    
+    <footer>
+        <p>&copy; 2024 SongPoint | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+</body>
+</html>
+
+
+

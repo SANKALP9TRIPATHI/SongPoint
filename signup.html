@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SongPoint - Sign Up</title>
+  <style>
+    body {
+      background-color: rgb(44, 42, 42);
+      font-family: Arial, sans-serif;
+      color: white;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: rgba(42, 42, 42, 0.7); 
+      border-radius: 8px;
+      padding: 40px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      background-size: cover; 
+      background-position: center; 
+      background-image: url('https://wtop.com/wp-content/uploads/2017/05/ThinkstockPhotos-526833490.jpg');
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    h2 span {
+      font-weight: bold;
+    }
+
+    .song {
+      color: white;
+    }
+
+    .point {
+      color: white;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      border: 1px solid #555;
+      border-radius: 4px;
+      background-color: #333;
+      color: white;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 15px;
+      background-color: #a367f2;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #8b4fdb;
+    }
+
+    .form-footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #bbb;
+    }
+
+    .form-footer a {
+      color: #a367f2;
+      text-decoration: none;
+    }
+
+    .form-footer a:hover {
+      text-decoration: underline;
+    }
+
+    
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      width: 80px;
+    }
+
+    
+    .social-buttons {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+
+    .social-buttons a {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0;
+      border-radius: 4px;
+      text-align: center;
+      font-size: 16px;
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .google-btn {
+      background-color: #db4437;
+    }
+
+    .google-btn:hover {
+      background-color: #c1352e;
+    }
+
+    .facebook-btn {
+      background-color: #3b5998;
+    }
+
+    .facebook-btn:hover {
+      background-color: #2d4373;
+    }
+
+    .apple-btn {
+      background-color: #333;
+    }
+
+    .apple-btn:hover {
+      background-color: #666;
+    }
+
+    .phone-btn {
+      background-color: #4caf50;
+    }
+
+    .phone-btn:hover {
+      background-color: #45a049;
+    }
+
+    
+    @media (max-width: 600px) {
+      .container {
+        padding: 30px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      input[type="text"], input[type="email"], input[type="password"], input[type="submit"] {
+        font-size: 14px;
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo-container">
+      <img src="C:\Users\Home\Pictures\Screenshots\Screenshot 2024-12-06 132749.png" alt="Logo">
+    </div>
+    <h2><span class="song">Song</span><span class="point">Point</span></h2>
+    <form action="#">
+      <input type="text" placeholder="Username" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="password" placeholder="Password" required>
+      <input type="submit" value="Sign Up">
+    </form>
+
+    
+    <div class="social-buttons">
+      <a href="google_signup.html" class="google-btn">Sign Up with Google</a>
+      <a href="facebook_signup.html" class="facebook-btn">Sign Up with Facebook</a>
+      <a href="apple_signup.html" class="apple-btn">Sign Up with Apple ID</a>
+      <a href="phone_signup.html" class="phone-btn">Sign Up with Phone Number</a>
+    </div>
+
+    <div class="form-footer">
+      <p>Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+  </div>
+</body>
+</html>
